@@ -1,0 +1,89 @@
++ 1 запустить веб сервер
++ 2 вывести хелловорлд
++ 3 подключить дб
++ 4 Создать базу данных операций
++ 5 Сделать окно редактирования, удаления и добавления операций
++ 6 Вывести баланс кошелька long
++ nice footer
++ Переключатель блока баланса
++ Блок баланса: все валюты, рубли, доллары, евро.
++ Авторизация, регистрация
++ Вывод имени
++ menus:
++    not auth
++        index
++            what is this?
++            Start to use
++            Login ico
+
++    authenticated
++        index
++            what is this
++            operations
++            logged in as <url>user@mail</url>
++            log out
++ Меню отредактировать
++ Верхнее меню
++ Вывести баланс в рублях, баланс в остальных валютах
++ Карточки операций
++ Формат даты
+Формат сумм
+
+Зависимость категорий от вида операции (Табы? или th:if)
+Изменение операции с помошью фичи материалдизайнсцц
+Вывод только своих операций
+Вывод баланса только своих кошельков
+Убрать баг у логина
+RESTApi -
+Фильтр по датам, фильтр по кошелькам
+Статистика за неделю, месяц, год
+Операция перевода денег
+
+
+
+
++скрипты вниз страницы
++ Сделать стили http://materializecss.com/
++ Сделать упрощенный дизайн страницы
+N+2 Сделать страницу настроек с добавлением счетов, валют, и категорий/подкатегорий
+Вывод списка аяксом http://materializecss.com/scrollfire.html
+nice footer
++http://www.thymeleaf.org/doc/articles/layouts.html - шаблоны
++http://www.thymeleaf.org/doc/articles/layouts.html после авторизации отображение if logged in
+<td th:text="${'$' + #numbers.formatDecimal(product.price, 1, 2)}">$350</td>
+<td th:text="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}">28-Jun-2013</td>
+сортировка http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#lists
+Группировка операций по датам
+Статистика за месяц
+
+
+content optimisation - странички привести в порядок
+
+Info
+DB users, every user has his own operations DB. In operations there are every owner operations
+
+подключенные фичи:
+lombok for getters and setters - средство упрощения ввода кода. позволяет
+Thymeleaf
+PostgreSQL
+TomCat
+Rest API
+Angular?
+BCryptPasswordEncoder - for passwordStore
+Ссылка github (+ картинка)
+
+
+USER <>---<>Operations<>---<>operationType
+                      <>---<>operationCategory
+                      <>---<>operationPic
+                      <>---<>account
+                      <>---<>currency
+                      <>---<>
+
+
+
+С чего начать:
+petclinic
+
+
+

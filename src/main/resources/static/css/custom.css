@@ -1,0 +1,44 @@
+.parallax-container {
+    height: 700px;
+}
+
+.wowbalance {
+    text-align: center;
+}
+
+.operations-paralax {
+    height: 400px;
+}
+
+.body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.carousel {
+    height: 200px !important;
+}
+
+.image_container {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+}
+
+.image_container img {
+    vertical-align: middle;
+}
+
+.card-reveal-title {
+    padding-left: 50px;
+}
+
+.description {
+    font-style: italic;
+}

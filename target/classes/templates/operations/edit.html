@@ -1,0 +1,94 @@
+<html layout:decorator="layout">
+<div layout:fragment="content">
+    <div class="container">
+        <div class="starter-template">
+            <div class="wowbalance"><h1>Edit operation</h1></div>
+        </div>
+
+    </div>
+    <div class="container">
+        <form method="post" name="comment_form" id="comment_form" action="/operations/update" role="form">
+            <div class="form-group">
+                <div class="input-field col s12">
+                    <select id="operationType" name="operationType">
+                        <option selected="true" disabled="false" th:text="${operation.operationType}"
+                                th:value="${operationType}"></option>
+                        <option th:each="operationTypeEdit : ${operationTypesEdit}"
+                                th:value="${operationTypeEdit}"
+                                th:text="${operationTypeEdit}">Credit card
+                        </option>
+                    </select>
+                    <label>Select operation type</label>
+                </div>
+                <br/>
+                <!--<label for="message">operationType</label> <textarea rows="1" class="form-control" id="operationType" name="operationType" th:text="${operation.operationType}"/>-->
+                <div class="input-field col s12">
+                    <select id="operationCategory" name="operationCategory">
+                        <option selected="true" disabled="false" th:text="${operation.operationCategory}"
+                                th:value="${operationCategory}"></option>
+                        <option th:each="operationCategoryEdit : ${operationCategoriesEdit}"
+                                th:value="${operationCategoryEdit}"
+                                th:text="${operationCategoryEdit}">Credit card
+                        </option>
+                    </select>
+                    <label>Select operation category</label>
+                </div>
+                <br/>
+                <!--<label for="message">operationCategory</label> <textarea rows="1" class="form-control" id="operationCategory" name="operationCategory" th:text="${operation.operationCategory}"/>-->
+                <!--<label for="message">operationPic</label> <textarea rows="1" class="form-control" id="operationPic" name="operationPic" th:text="${operation.operationPic}"/>-->
+                <!--<label for="message">account</label> <textarea rows="1" class="form-control" id="account" name="account" th:text="${operation.account}"/>-->
+                <div class="input-field col s12">
+                    <select id="account" name="account">
+                        <option selected="true" disabled="false" th:text="${operation.account}"
+                                th:value="${account}"></option>
+                        <option th:each="accountEdit : ${accountsEdit}"
+                                th:value="${accountEdit}"
+                                th:text="${accountEdit}">Credit card
+                        </option>
+                    </select>
+                    <label>Select account</label>
+                </div>
+                <br/>
+                <!--<label for="message">value</label> <textarea rows="1" class="form-control" id="value" name="value" th:text="${operation.value}"/>-->
+                <!--<div class="input-field col s6">-->
+                <!--<input id="value" name="value" type="text" th:text="${operation.value}" length="20" />-->
+                <!--&lt;!&ndash;<label for="value">Value</label>&ndash;&gt;-->
+                <!--</div>-->
+
+                <div class="input-field col s6">
+                    <input th:field="${operation.value}" id="value" name="value" type="text" class="validate"
+                           length="20"/>
+                    <label class="active" for="value">Change value</label>
+                </div>
+
+                <!--<label for="message">currency</label> <textarea rows="1" class="form-control" id="currency" name="currency" th:text="${operation.currency}"/>-->
+                <div class="input-field col s12">
+                    <select id="currency" name="currency">
+                        <option selected="true" disabled="false" th:text="${operation.currency}"
+                                th:value="${currency}"></option>
+                        <option th:each="currencyEdit : ${currenciesEdit}"
+                                th:value="${currencyEdit}"
+                                th:text="${currencyEdit}">Credit card
+                        </option>
+                    </select>
+                    <label>Select account</label>
+                </div>
+                <br/>
+
+                <!--<label for="description">description</label>-->
+                <!--<textarea rows="1" class="form-control" id="description" name="description" th:text="${operation.description}"/>-->
+
+                <div class="input-field col s6">
+                    <input th:field="${operation.description}" id="description" name="description" type="text"
+                           class="validate" length="20"/>
+                    <label class="active" for="description">Change description</label>
+                </div>
+
+            </div>
+            <input type="hidden" id="operation_id" rows="1" class="form-control" name="operation_id"
+                   th:value="${operation.id}"/>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</html>

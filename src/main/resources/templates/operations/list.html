@@ -1,0 +1,117 @@
+<html layout:decorator="layout">
+<div layout:fragment="content">
+
+    <div class="carousel carousel-slider center" data-indicators="true">
+        <div class="carousel-item blue" href="#one!">
+            <p class="">
+            <p th:text="${currentUser}"/>
+            <!--<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>-->
+            <!--SEC:AUT <sec:authentication property="principal.username" />-->
+            <p th:text="'Your balance in ' + ${getCurrencyRUB}"/></p>
+            <h1 th:text="${balanceRUB} + ' ' + ${getCurrencyRUB}"/>
+        </div>
+        <div class="carousel-item cyan" href="#two!">
+            <p th:text="'Your balance in ' + ${getCurrencyEUR}"/>
+            <h1 th:text="${balanceEUR} + ' ' + ${getCurrencyEUR}"/>
+        </div>
+        <div class="carousel-item teal" href="#three!">
+            <p th:text="'Your balance in ' + ${getCurrencyUSD}"/>
+            <h1 th:text="${balanceUSD} + ' ' + ${getCurrencyUSD}"/>
+        </div>
+    </div>
+    <div class="container wowcontainer">
+        <div class="wowbalance">
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="starter-template">
+
+            <p>
+            <h3 class="center-align">You can add, edit, delete all operations and posts</h3></p>
+            <p class="center-align lead">Check your operations here</p>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-striped" id="operations_list">
+            <tbody>
+            <tr data-th-each="operation : ${operations}">
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <p class="ownerId" data-th-text="${operation.ownerId}" hidden="true"></p>
+                        <!--<p class="timestamp" data-th-text="${operation.timestamp}"></p>-->
+                        <div class="row">
+                            <div class="col s3">
+                                <img class="operationPic" th:src="|/icons/${operation.operationPic}|" height="180"
+                                     width="180"/>
+                            </div>
+                            <div class="col s9">
+                                <div class="row">
+                                    <span class="card-title activator grey-text text-darken-4">
+                                            <span class="operationType"
+                                                  data-th-text="${operation.operationType}"></span>
+                                            <i class="material-icons right">more_vert</i>
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <div class="col s8">
+
+                                        <p class="timestamp"
+                                           data-th-text="${#dates.format(operation.timestamp * 1000, 'dd MMMM yy')}">
+                                            28-Jun-2013</p>
+                                        <h4><span class="operationCategory"
+                                                  data-th-text="${operation.operationCategory}"></span>
+                                            <i class="material-icons">trending_flat</i>
+                                            <span class="account" data-th-text="${operation.account}"></span>
+                                        </h4>
+                                        <p></p>
+                                        <p></p>
+                                        <p class="description"><span class="grey-text text-lighten-1"># </span><span
+                                                data-th-text="${operation.description}"
+                                                class="grey-text text-lighten-1"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col s4">
+                                        <!--<h4 class="right-align"><span class="value" data-th-text="${operation.value}"></span>-->
+                                        <h4 class="right-align"><span class="value" data-th-text="${#numbers.formatDecimal(operation.value/100, 3, 'WHITESPACE', 2, 'POINT')}"></span>
+                                        </h4>
+                                        <p class="currency right-align" data-th-text="${operation.currency}"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-reveal-title center-align card-title grey-text text-darken-4">Edit or delete<i
+                                class="material-icons right">close</i></span>
+                        <div class="row">
+                            <div class="col s3 center-align"></div>
+                            <div class="col s3 center-align">
+                                <a th:href="@{'/operations/{id}/edit'(id=${operation.id})}" class="edit"
+                                   th:attr="name=${operation.operationCategory}">
+                                    <i class="large material-icons">mode_edit</i>
+                                </a>
+                            </div>
+                            <div class="col s3 center-align">
+                                <a th:href="@{'/operations/{id}/delete'(id=${operation.id})}" class="delete"
+                                   th:attr="name=${operation.operationCategory}">
+                                    <i class="large material-icons">delete</i>
+                                </a>
+                            </div>
+                            <div class="col s3 center-align"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </tr>
+            </tbody>
+        </table>
+
+        <!--Action button-->
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large waves-effect waves  ight red" href="/operations/new"><i
+                    class="material-icons">add</i></a>
+        </div>
+    </div>
+</div>
+</html>

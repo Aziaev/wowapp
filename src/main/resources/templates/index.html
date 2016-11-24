@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <link rel="icon" href="/icons/favicon.ico"/>
+
+    <title>wowmoney webapp</title>
+
+    <link rel="stylesheet" href="/css/materialize.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+
+</head>
+
+<body>
+
+<div th:replace="fragments/nav :: nav"/>
+
+<div class="parallax-container">
+    <div class="container" style="padding-top: 10%">
+
+
+        <h1 class="white-text" style="text-align: center; vertical-align: middle">
+            Hello
+            <span sec:authorize="!isAuthenticated()">guest</span>
+            <span sec:authorize="isAuthenticated()">user with <span sec:authentication="name">autentication name</span> email</span>
+            !
+        </h1>
+        <h4 class="white-text" style="text-align: center; vertical-align: middle">
+            <div sec:authorize="isAuthenticated()">
+                Login and start to use this awesome financial stuff today and be happy
+            </div>
+
+            <div sec:authorize="!isAuthenticated()">
+                Go operations page and check your money blablabla etc wowaweewa
+            </div>
+        </h4>
+    </div>
+    <div class="parallax">
+        <img src="/images/parallax1.jpg" style="display: block; transform: translate3d(-50%, 354px, 0px);"/>
+    </div>
+</div>
+<div class="section white">
+    <div class="row container" id="whatisthis">
+        <h1 class="header">wowmoney </h1>
+        <p class="grey-text text-darken-3 lighten-3">
+        <h3>personal budget multiplatform java based awesome feature
+            Used technologies:</h3></p>
+        <p>Java 1.8</p>
+        <p>Spring Boost</p>
+        <p>JPA</p>
+        <p>Lombok</p>
+        <p>Tomcat</p>
+        <p>PostgreSQL</p>
+        <p>Intellij IDEA</p>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="container">
+        <div class="center-align" style="padding-top: 15%">
+            <img src="images/logoalpha.png" height="216" width="524"/>
+            <h1 class="valign white-text">
+                <span sec:authorize="!isAuthenticated()">Register and login now!</span>
+                <span sec:authorize="isAuthenticated()">Check your balance now!</span>
+            </h1>
+        </div>
+    </div>
+    <div class="parallax">
+        <img src="/images/parallax2.jpg" style="display: block; transform: translate3d(-50%, 331px, 0px);"/>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/js/materialize.js"></script>
+<script src="/js/wow.js"/>
+</body>
+</html>
