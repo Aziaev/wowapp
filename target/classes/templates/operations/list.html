@@ -4,10 +4,8 @@
     <div class="carousel carousel-slider center" data-indicators="true">
         <div class="carousel-item blue" href="#one!">
             <p class="">
-            <p th:text="${currentUser}"/>
-            <!--<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>-->
-            <!--SEC:AUT <sec:authentication property="principal.username" />-->
-            <p th:text="'Your balance in ' + ${getCurrencyRUB}"/></p>
+            <p th:text="'Your balance in ' + ${getCurrencyRUB}"/>
+            </p>
             <h1 th:text="${balanceRUB} + ' ' + ${getCurrencyRUB}"/>
         </div>
         <div class="carousel-item cyan" href="#two!">
@@ -73,7 +71,8 @@
                                     </div>
                                     <div class="col s4">
                                         <!--<h4 class="right-align"><span class="value" data-th-text="${operation.value}"></span>-->
-                                        <h4 class="right-align"><span class="value" data-th-text="${#numbers.formatDecimal(operation.value/100, 3, 'WHITESPACE', 2, 'POINT')}"></span>
+                                        <h4 class="right-align"><span class="value"
+                                                                      data-th-text="${#numbers.formatDecimal(operation.value/100, 0, 'WHITESPACE', 2, 'POINT')}"></span>
                                         </h4>
                                         <p class="currency right-align" data-th-text="${operation.currency}"></p>
                                     </div>
