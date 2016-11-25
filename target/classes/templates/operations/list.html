@@ -72,7 +72,7 @@
                                     <div class="col s4">
                                         <!--<h4 class="right-align"><span class="value" data-th-text="${operation.value}"></span>-->
                                         <h4 class="right-align"><span class="value"
-                                                                      data-th-text="${#numbers.formatDecimal(operation.value/100, 0, 'WHITESPACE', 2, 'POINT')}"></span>
+                                                                      data-th-text="${#numbers.formatDecimal(operation.value, 0, 'WHITESPACE', 2, 'POINT')/100}"></span>
                                         </h4>
                                         <p class="currency right-align" data-th-text="${operation.currency}"></p>
                                     </div>
