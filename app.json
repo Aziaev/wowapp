@@ -1,0 +1,15 @@
+{
+  "name": "wowmoneywebapp",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
