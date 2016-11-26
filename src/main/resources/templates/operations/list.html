@@ -4,17 +4,21 @@
     <div class="carousel carousel-slider center" data-indicators="true">
         <div class="carousel-item blue" href="#one!">
             <p class="">
+
+                <!--"${#numbers.formatDecimal(operation.value/100+'.'+operation.value%100, 0, 'WHITESPACE', 2, 'POINT')}"-->
             <p th:text="'Your balance in ' + ${getCurrencyRUB}"/>
             </p>
-            <h1 th:text="${balanceRUB} + ' ' + ${getCurrencyRUB}"/>
+            <h1 th:text="${#numbers.formatDecimal(balanceRUB/100+'.'+balanceRUB%100, 0, 'WHITESPACE', 2, 'POINT')} + ' ' + ${getCurrencyRUB}"/>
         </div>
         <div class="carousel-item cyan" href="#two!">
             <p th:text="'Your balance in ' + ${getCurrencyEUR}"/>
-            <h1 th:text="${balanceEUR} + ' ' + ${getCurrencyEUR}"/>
+            <!--<h1 th:text="${balanceEUR} + ' ' + ${getCurrencyEUR}"/>-->
+            <h1 th:text="${#numbers.formatDecimal(balanceEUR/100+'.'+balanceEUR%100, 0, 'WHITESPACE', 2, 'POINT')} + ' ' + ${getCurrencyEUR}"/>
         </div>
         <div class="carousel-item teal" href="#three!">
             <p th:text="'Your balance in ' + ${getCurrencyUSD}"/>
-            <h1 th:text="${balanceUSD} + ' ' + ${getCurrencyUSD}"/>
+            <!--<h1 th:text="${balanceUSD} + ' ' + ${getCurrencyUSD}"/>-->
+            <h1 th:text="${#numbers.formatDecimal(balanceUSD/100+'.'+balanceUSD%100, 0, 'WHITESPACE', 2, 'POINT')} + ' ' + ${getCurrencyUSD}"/>
         </div>
     </div>
     <div class="container wowcontainer">

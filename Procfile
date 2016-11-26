@@ -1,1 +1,1 @@
-web: java -cp target/classes:target/dependency/* com.rabigol.wowmoneywebapp.Application
+web: java $JAVA_OPTS -jar target/*.jar
