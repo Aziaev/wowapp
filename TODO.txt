@@ -72,6 +72,7 @@ PostgreSQL
 TomCat
 Rest API
 Angular?
+chartJs
 BCryptPasswordEncoder - for passwordStore
 Ссылка github (+ картинка)
 
@@ -82,11 +83,3 @@ USER <>---<>Operations<>---<>operationType
                       <>---<>account
                       <>---<>currency
                       <>---<>
-
-
-
-С чего начать:
-petclinic
-
-
-
