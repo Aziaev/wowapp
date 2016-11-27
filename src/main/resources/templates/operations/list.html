@@ -4,21 +4,23 @@
     <div class="carousel carousel-slider center" data-indicators="true">
         <div class="carousel-item blue" href="#one!">
             <p class="">
-
-                <!--"${#numbers.formatDecimal(operation.value/100+'.'+operation.value%100, 0, 'WHITESPACE', 2, 'POINT')}"-->
-            <p th:text="'Your balance in ' + ${getCurrencyRUB}"/>
+            <p th:text="'Your balance is' + ${getCurrencyRUB}"/>
             </p>
-            <h1 th:text="${#numbers.formatDecimal(balanceRUB/100+'.'+balanceRUB%100, 0, 'WHITESPACE', 2, 'POINT')} + ' ' + ${getCurrencyRUB}"/>
+            <h1 th:text="${balanceRUB} >= 0 ?
+            ${#numbers.formatDecimal(balanceRUB/100+'.'+balanceRUB%100, 0, 'WHITESPACE', 2, 'POINT')} :
+            ${#numbers.formatDecimal('-'+(-1*balanceRUB)/100, 0, 'WHITESPACE', 2, 'POINT')}"/>
         </div>
         <div class="carousel-item cyan" href="#two!">
             <p th:text="'Your balance in ' + ${getCurrencyEUR}"/>
-            <!--<h1 th:text="${balanceEUR} + ' ' + ${getCurrencyEUR}"/>-->
-            <h1 th:text="${#numbers.formatDecimal(balanceEUR/100+'.'+balanceEUR%100, 0, 'WHITESPACE', 2, 'POINT')} + ' ' + ${getCurrencyEUR}"/>
+            <h1 th:text="${balanceEUR} >= 0 ?
+            ${#numbers.formatDecimal(balanceEUR/100, 0, 'WHITESPACE', 2, 'POINT')} :
+            ${#numbers.formatDecimal('-'+(-1*balanceEUR)/100, 0, 'WHITESPACE', 2, 'POINT')}"/>
         </div>
         <div class="carousel-item teal" href="#three!">
             <p th:text="'Your balance in ' + ${getCurrencyUSD}"/>
-            <!--<h1 th:text="${balanceUSD} + ' ' + ${getCurrencyUSD}"/>-->
-            <h1 th:text="${#numbers.formatDecimal(balanceUSD/100+'.'+balanceUSD%100, 0, 'WHITESPACE', 2, 'POINT')} + ' ' + ${getCurrencyUSD}"/>
+            <h1 th:text="${balanceUSD} >= 0 ?
+            ${#numbers.formatDecimal(balanceUSD/100, 0, 'WHITESPACE', 2, 'POINT')} :
+            ${#numbers.formatDecimal('-'+(-1*balanceUSD)/100, 0, 'WHITESPACE', 2, 'POINT')}"/>
         </div>
     </div>
     <div class="container wowcontainer">
@@ -44,7 +46,7 @@
                         <!--<p class="timestamp" data-th-text="${operation.timestamp}"></p>-->
                         <div class="row">
                             <div class="col s3">
-                                <img class="operationPic" th:src="|/icons/${operation.operationPic}|" height="180"
+                                <img class="operationPic" th:src="|/icons/${operation.operationCategory}.png|" height="180"
                                      width="180"/>
                             </div>
                             <div class="col s9">
@@ -76,7 +78,9 @@
                                     <div class="col s4">
                                         <!--<h4 class="right-align"><span class="value" data-th-text="${operation.value}"></span>-->
                                         <h4 class="right-align"><span class="value"
-                                                                      data-th-text="${#numbers.formatDecimal(operation.value/100+'.'+operation.value%100, 0, 'WHITESPACE', 2, 'POINT')}"></span>
+                                                                      data-th-text="${operation.value} >= 0 ?
+                                                                      ${#numbers.formatDecimal(operation.value/100+'.'+operation.value%100, 0, 'WHITESPACE', 2, 'POINT')} :
+                                                                      ${#numbers.formatDecimal('-'+(operation.value*-1)/100+'.'+(operation.value*-1)%100, 0, 'WHITESPACE', 2, 'POINT')}"></span>
                                         </h4>
                                         <p class="currency right-align" data-th-text="${operation.currency}"></p>
                                     </div>

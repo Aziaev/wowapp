@@ -56,7 +56,7 @@
                 <!--</div>-->
 
                 <div class="input-field col s6">
-                    <input th:field="${operation.value}" id="value" name="value" type="text" class="validate"
+                    <input th:field="${operation.value/100}" id="value" name="value" type="number" step="0.01" class="validate"
                            length="20"/>
                     <label class="active" for="value">Change value</label>
                 </div>
