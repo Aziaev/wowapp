@@ -50,3 +50,11 @@
     bottom:0;
     margin:auto;
 }
+
+.container .row {
+    margin-bottom: 0px;
+}
+
+.card .card-title {
+    padding-left: 10px;
+}

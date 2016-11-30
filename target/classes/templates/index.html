@@ -28,7 +28,7 @@
         <h1 class="white-text" style="text-align: center; vertical-align: middle">
             Hello
             <span sec:authorize="!isAuthenticated()">guest</span>
-            <span sec:authorize="isAuthenticated()">user with <span sec:authentication="name">autentication name</span> email</span>
+            <span sec:authorize="isAuthenticated()"> <span th:text="${username}"/></span>
             !
         </h1>
         <h4 class="white-text" style="text-align: center; vertical-align: middle">
@@ -42,7 +42,7 @@
         </h4>
     </div>
     <div class="parallax">
-        <img src="/images/parallax1.jpg" style="display: block; transform: translate3d(-50%, 354px, 0px);"/>
+        <img src="/images/parallax4.png" style="display: block; transform: translate3d(-50%, 354px, 0px);"/>
     </div>
 </div>
 <div class="section white">
@@ -64,10 +64,10 @@
     <div class="container">
         <div class="center-align" style="padding-top: 15%">
             <img src="images/logoalpha.png" height="216" width="524"/>
-            <h1 class="valign white-text">
-                <span sec:authorize="!isAuthenticated()">Register and login now!</span>
-                <span sec:authorize="isAuthenticated()">Check your balance now!</span>
-            </h1>
+            <!--<h1 class="valign white-text">-->
+                <!--<span sec:authorize="!isAuthenticated()">Register and login now!</span>-->
+                <!--<span sec:authorize="isAuthenticated()">Check your balance now!</span>-->
+            <!--</h1>-->
         </div>
     </div>
     <div class="parallax">

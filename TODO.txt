@@ -93,3 +93,6 @@ USER <>---<>Operations<>---<>operationType
                       <>---<>account
                       <>---<>currency
                       <>---<>
+
+
+Почитать https://habrahabr.ru/post/203318/

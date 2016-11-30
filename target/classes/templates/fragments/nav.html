@@ -15,7 +15,9 @@
                     <li style="margin-left: 25px"><a href="/operations" title="Check your balance and operations">Operations</a>
                     </li>
                     <li style="margin-left: 25px">
-                        Logged as <span sec:authentication="name">autentication name</span>
+
+                        <!--Logged as <span sec:authentication="name">autentication name</span>-->
+                        Logged as <span th:text="${username}"/>
                     </li>
                     <li style="margin-left: 25px">
                         <a href="/logout" onclick="Materialize.toast('Logging out', 4000)"><i class="material-icons left">perm_identity</i>Logout</a>
