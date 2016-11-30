@@ -18,6 +18,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <start-class>com.rabigol.wowmoneywebapp.Application</start-class>
     </properties>
 
     <dependencies>
@@ -93,7 +94,9 @@
                     <execution>
                         <id>copy-dependencies</id>
                         <phase>package</phase>
-                        <goals><goal>copy-dependencies</goal></goals>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
