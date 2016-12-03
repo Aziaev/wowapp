@@ -1,48 +1,13 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml" layout:decorator="layout">
 <div layout:fragment="content">
-
-    <div class="carousel carousel-slider center" data-indicators="true">
-        <div class="carousel-item blue" href="#one!">
-            <p class="">
-            <p th:text="'Your balance is' + ${getCurrencyRUB}"/>
-            </p>
-            <!--<h1 th:text="${balanceRUB} >= 0 ?-->
-            <!--${#numbers.formatDecimal(balanceRUB/100+'.'+balanceRUB%100, 0, 'WHITESPACE', 2, 'POINT')} :-->
-            <!--${#numbers.formatDecimal('-'+(-1*balanceRUB)/100, 0, 'WHITESPACE', 2, 'POINT')}"/>            -->
-            <h1 th:text="${balanceRUB}"/>
-        </div>
-        <div class="carousel-item cyan" href="#two!">
-            <p th:text="'Your balance in ' + ${getCurrencyEUR}"/>
-            <!--<h1 th:text="${balanceEUR} >= 0 ?-->
-            <!--${#numbers.formatDecimal(balanceEUR/100, 0, 'WHITESPACE', 2, 'POINT')} :-->
-            <!--${#numbers.formatDecimal('-'+(-1*balanceEUR)/100, 0, 'WHITESPACE', 2, 'POINT')}"/>-->
-            <h1 th:text="${balanceEUR}"/>
-        </div>
-        <div class="carousel-item teal" href="#three!">
-            <p th:text="'Your balance in ' + ${getCurrencyUSD}"/>
-            <!--<h1 th:text="${balanceUSD} >= 0 ?-->
-            <!--${#numbers.formatDecimal(balanceUSD/100, 0, 'WHITESPACE', 2, 'POINT')} :-->
-            <!--${#numbers.formatDecimal('-'+(-1*balanceUSD)/100, 0, 'WHITESPACE', 2, 'POINT')}"/>-->
-            <h1 th:text="${balanceUSD}"/>
-        </div>
-    </div>
-    <div class="container wowcontainer">
-        <div class="wowbalance">
-
-        </div>
-    </div>
-    <div class="container">
-        <div class="starter-template">
-
-            <p>
-            <h3 class="center-align">You can add, edit, delete all operations and posts</h3></p>
-            <p class="center-align lead">Check your operations here</p>
-        </div>
-    </div>
-    <div class="container">
+    <div class="container operations">
         <div class="row">
-            <div class="col s2"></div>
+            <div class="col s4">
+                <div th:replace="fragments/fragment_left_panel :: fragment_left_panel"/>
+            </div>
             <div class="col s8">
+                <h3 class="center-align">Your history</h3>
+                <p class="center-align lead">Create, update, delete is available</p>
                 <table class="table table-striped" id="operations_list">
                     <tbody>
                     <tr data-th-each="operation : ${operations}">
@@ -70,11 +35,11 @@
                                                 <p class="timestamp"
                                                    data-th-text="${#dates.format(operation.timestamp * 1000, 'dd MMMM yy')}">
                                                     28-Jun-2013</p>
-                                                <h4><span class="operationCategory"
+                                                <h5><span class="operationCategory"
                                                           data-th-text="${operation.operationCategory}"></span>
                                                     <i class="material-icons">trending_flat</i>
                                                     <span class="account" data-th-text="${operation.account}"></span>
-                                                </h4>
+                                                </h5>
                                                 <p></p>
                                                 <p></p>
                                                 <p class="description"><span
@@ -85,11 +50,11 @@
                                             </div>
                                             <div class="col s4">
                                                 <!--<h4 class="right-align"><span class="value" data-th-text="${operation.value}"></span>-->
-                                                <h4 class="right-align"><span class="value"
+                                                <h5 class="right-align"><span class="value"
                                                                               data-th-text="${operation.value} >= 0 ?
                                                                       ${#numbers.formatDecimal(operation.value/100+'.'+operation.value%100, 0, 'WHITESPACE', 2, 'POINT')} :
                                                                       ${#numbers.formatDecimal('-'+(operation.value*-1)/100+'.'+(operation.value*-1)%100, 0, 'WHITESPACE', 2, 'POINT')}"></span>
-                                                </h4>
+                                                </h5>
                                                 <p class="currency right-align"
                                                    data-th-text="${operation.currency}"></p>
                                             </div>
@@ -122,7 +87,6 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col s2"></div>
         </div>
         <!--Action button-->
         <div class="fixed-action-btn">

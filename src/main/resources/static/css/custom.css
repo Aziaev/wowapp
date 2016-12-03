@@ -10,6 +10,10 @@
     height: 400px;
 }
 
+.operations {
+    margin-top: 20px;
+}
+
 .body {
     display: flex;
     min-height: 100vh;
@@ -45,10 +49,12 @@
 
 .operationPic {
     display: block;
-    position:absolute;
-    top:0;
-    bottom:0;
-    margin:auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 140px;
+    width: 140px;
 }
 
 .container .row {
@@ -57,4 +63,29 @@
 
 .card .card-title {
     padding-left: 10px;
+}
+
+/* Left panel settings */
+.leftpanel h4{
+    margin: 0rem 0 0.912rem 0;
+}
+
+.leftpanel h5{
+    margin: 0.0rem 0 0.656rem 0;
+}
+
+.leftpaneltotalbalance {
+    margin-top: 0px;
+}
+
+.leftpanel p {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+/* Logo */
+.brand-logo img {
+    margin-top: 7px;
+    height: 50px;
+    width: 130px;
 }
