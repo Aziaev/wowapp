@@ -23,8 +23,6 @@
 
 <div class="parallax-container">
     <div class="container" style="padding-top: 10%">
-
-
         <h1 class="white-text" style="text-align: center; vertical-align: middle">
             Hello
             <span sec:authorize="!isAuthenticated()">guest</span>
@@ -49,15 +47,34 @@
     <div class="row container" id="whatisthis">
         <h3 class="header">wowmoney </h3>
         <p class="grey-text text-darken-3 lighten-3">
-        personal budget multiplatform java based awesome feature
-            Used technologies:</p>
-        <div class="chip">Java 1.8</div>
-        <div class="chip">Spring Boot</div>
-        <div class="chip">JPA</div>
-        <div class="chip">Lombok</div>
-        <div class="chip">Tomcat</div>
-        <div class="chip">PostgreSQL</div>
-        <div class="chip">Intellij IDEA</div>
+            Personal budget multiplatform java based awesome feature. App builded with this stuff:</p>
+        <div class="indexfeatures">
+            <span>Core:</span><br/>
+            <div class="chip">Java 1.8</div>
+            <div class="chip">Spring Boot</div>
+            <div class="chip">Spring Security</div>
+            <div class="chip">JPA</div>
+        </div>
+        <div class="indexfeatures">
+            <span>Easy code:</span><br/>
+            <div class="chip">Lombok 1.16.10</div>
+        </div>
+        <div class="indexfeatures">
+            <span>Web:</span><br/>
+            <div class="chip">Thymeleaf 3.0</div>
+            <div class="chip">Materialize CSS</div>
+        </div>
+        <div class="indexfeatures">
+            <span>Server and database:</span><br/>
+            <div class="chip">Tomcat 8.0.36</div>
+            <div class="chip">PostgreSQL</div>
+            <div class="chip">pgAdmin III</div>
+        </div>
+        <div class="indexfeatures">
+            <span>IDE:</span><br/>
+            <div class="chip">Intellij IDEA 2016.2.5</div>
+        </div>
+        <!--<iframe src="https://ghbtns.com/github-btn.html?user=aziaev&repo=wowmoneywebapp&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>-->
     </div>
 </div>
 <div class="parallax-container">
@@ -74,7 +91,6 @@
         <img src="/images/parallax2.jpg" style="display: block; transform: translate3d(-50%, 331px, 0px);"/>
     </div>
 </div>
-
 <div th:replace="fragments/footer :: footer"/>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

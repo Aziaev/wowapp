@@ -1,5 +1,10 @@
+/* Index page */
 .parallax-container {
     height: 700px;
+}
+
+.indexfeatures {
+    padding-bottom: 20px;
 }
 
 .wowbalance {
@@ -66,11 +71,11 @@
 }
 
 /* Left panel settings */
-.leftpanel h4{
+.leftpanel h4 {
     margin: 0rem 0 0.912rem 0;
 }
 
-.leftpanel h5{
+.leftpanel h5 {
     margin: 0.0rem 0 0.656rem 0;
 }
 
@@ -88,4 +93,16 @@
     margin-top: 7px;
     height: 50px;
     width: 130px;
+}
+
+/* Lean modal */
+#lean_overlay {
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    display: none;
 }

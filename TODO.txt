@@ -55,16 +55,8 @@
 RESTApi
 Убрать баг у логина
 
-подключенные фичи:
-lombok for getters and setters - средство упрощения ввода кода. позволяет
-Thymeleaf
-PostgreSQL
-TomCat
+Used?
 Rest API
-Angular?
-chartJs
-BCryptPasswordEncoder - for passwordStore
-Ссылка github (+ картинка)
 postman
 
 Почитать https://habrahabr.ru/post/203318/
