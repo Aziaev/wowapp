@@ -106,3 +106,13 @@
     background: #000;
     display: none;
 }
+
+/* Login page */
+.loginbutton {
+    margin-top: 65px;
+}
+
+/* navbar */
+li {
+    margin-left: 25px;
+}
