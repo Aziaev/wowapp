@@ -12,8 +12,8 @@
                 <form method="post" name="comment_form" id="comment_form" action="/operations/create" role="form">
                     <div class="form-group">
                         <div class="input-field col s12">
-                            <select id="operationType" name="operationType" required="true">
-                                <option selected="true" disabled="true">Select operation type</option>
+                            <select id="operationType" name="operationType" required="true" >
+                                <!--<option selected="true" disabled="true">Select operation type</option>-->
                                 <option th:each="operationType : ${operationTypes}"
                                         th:value="${operationType}"
                                         th:text="${operationType}">Credit card

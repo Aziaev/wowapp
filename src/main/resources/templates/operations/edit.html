@@ -12,12 +12,12 @@
             <div class="col s12 m4 l6">
                 <form method="post" name="comment_form" id="comment_form" action="/operations/update" role="form">
                     <div class="form-group">
+                        <!--<div class="input-field col s12">-->
                         <div class="input-field col s12">
                             <select id="operationType" name="operationType">
-                                <option selected="true" disabled="false" th:text="${operation.operationType}"
-                                        th:value="${operationType}"></option>
                                 <option th:each="operationTypeEdit : ${operationTypesEdit}"
                                         th:value="${operationTypeEdit}"
+                                        th:selected="${operationTypeEdit == operation.operationType}"
                                         th:text="${operationTypeEdit}">Credit card
                                 </option>
                             </select>
@@ -27,10 +27,9 @@
 
                         <div class="input-field col s12">
                             <select id="operationCategory" name="operationCategory">
-                                <option selected="true" disabled="false" th:text="${operation.operationCategory}"
-                                        th:value="${operationCategory}"></option>
                                 <option th:each="operationCategoryEdit : ${operationCategoriesEdit}"
                                         th:value="${operationCategoryEdit}"
+                                        th:selected="${operationCategoryEdit == operation.operationCategory}"
                                         th:text="${operationCategoryEdit}">Credit card
                                 </option>
                             </select>
@@ -40,10 +39,9 @@
 
                         <div class="input-field col s12">
                             <select id="account" name="account">
-                                <option selected="true" disabled="false" th:text="${operation.account}"
-                                        th:value="${account}"></option>
                                 <option th:each="accountEdit : ${accountsEdit}"
                                         th:value="${accountEdit}"
+                                        th:selected="${accountEdit == operation.account}"
                                         th:text="${accountEdit}">Credit card
                                 </option>
                             </select>
@@ -59,10 +57,9 @@
 
                         <div class="input-field col s4">
                             <select id="currency" name="currency">
-                                <option selected="true" disabled="false" th:text="${operation.currency}"
-                                        th:value="${currency}"></option>
                                 <option th:each="currencyEdit : ${currenciesEdit}"
                                         th:value="${currencyEdit}"
+                                        th:selected="${currencyEdit == operation.currency}"
                                         th:text="${currencyEdit}">Credit card
                                 </option>
                             </select>
